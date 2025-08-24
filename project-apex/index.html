@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Apex - Smart Fuel Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="user-info">
+                    <div class="avatar">RS</div>
+                    <div>
+                        <h3>Welcome back</h3>
+                        <p>Robert Scott</p>
+                    </div>
+                </div>
+                <div class="stark-points">
+                    <div class="points-value">1,450</div>
+                    <div class="points-label">Stark Points</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Screen -->
+            <div class="screen active" id="home-screen">
+                <div class="stats-grid">
+                    <div class="stat-card primary">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-value">₹850</div>
+                        <div class="stat-label">Monthly Savings</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⛽</div>
+                        <div class="stat-value">8</div>
+                        <div class="stat-label">Transactions</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🔥</div>
+                        <div class="stat-value">12</div>
+                        <div class="stat-label">Day Streak</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📈</div>
+                        <div class="stat-value">15.8</div>
+                        <div class="stat-label">km/L Avg</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Active Challenges</h2>
+                    <div class="challenges-grid">
+                        <div class="challenge-card">
+                            <div class="challenge-header">
+                                <div class="challenge-title">Multi-Brand Explorer</div>
+                                <div class="challenge-reward">200 Points</div>
+                            </div>
+                            <p>Fill up at 3 different fuel brands this month</p>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 67%"></div>
+                            </div>
+                            <div class="challenge-progress">2 of 3 completed • 6 days left</div>
+                        </div>
+                        <div class="challenge-card completed">
+                            <div class="challenge-header">
+                                <div class="challenge-title">Smart Saver</div>
+                                <div class="challenge-reward status--success">Completed!</div>
+                            </div>
+                            <p>Save ₹500 using app offers this month</p>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                            <div class="challenge-progress">₹850 saved • Target exceeded!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Recent Activity</h2>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon bpcl">BP</div>
+                            <div class="activity-details">
+                                <div class="activity-title">BPCL - Central Plaza</div>
+                                <div class="activity-meta">Aug 24 • 14.6L Petrol • UPI</div>
+                            </div>
+                            <div class="activity-amount">
+                                <div class="amount">₹1,500</div>
+                                <div class="points">+45 pts</div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon hpcl">HP</div>
+                            <div class="activity-details">
+                                <div class="activity-title">HPCL - Highway Station</div>
+                                <div class="activity-meta">Aug 19 • 21.8L Petrol • Credit Card</div>
+                            </div>
+                            <div class="activity-amount">
+                                <div class="amount">₹2,200</div>
+                                <div class="points">+66 pts</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pump Locator Screen -->
+            <div class="screen" id="locate-screen">
+                <div class="locate-header">
+                    <h2>Nearby Fuel Stations</h2>
+                    <button class="btn btn--secondary btn--sm" id="filter-btn">
+                        <span>🔍</span> Filters
+                    </button>
+                </div>
+                
+                <div class="stations-grid">
+                    <div class="station-card best-price">
+                        <div class="station-header">
+                            <div class="station-brand jio-bp">Jio</div>
+                            <div class="station-distance">2.1 km • 8 min</div>
+                        </div>
+                        <div class="station-name">Jio-bp - Smart Station</div>
+                        <div class="station-prices">
+                            <div class="fuel-price">
+                                <span class="fuel-type">Petrol</span>
+                                <span class="price">₹101.75</span>
+                            </div>
+                            <div class="fuel-price">
+                                <span class="fuel-type">Diesel</span>
+                                <span class="price">₹88.90</span>
+                            </div>
+                        </div>
+                        <div class="station-offer">Best price guaranteed</div>
+                        <div class="station-rating">⭐ 4.3 • Available now</div>
+                    </div>
+
+                    <div class="station-card">
+                        <div class="station-header">
+                            <div class="station-brand bpcl">BP</div>
+                            <div class="station-distance">0.8 km • 3 min</div>
+                        </div>
+                        <div class="station-name">BPCL - Central Plaza</div>
+                        <div class="station-prices">
+                            <div class="fuel-price">
+                                <span class="fuel-type">Petrol</span>
+                                <span class="price">₹102.45</span>
+                            </div>
+                            <div class="fuel-price">
+                                <span class="fuel-type">Diesel</span>
+                                <span class="price">₹89.67</span>
+                            </div>
+                        </div>
+                        <div class="station-offer special-offer">5% cashback with UPI</div>
+                        <div class="station-rating">⭐ 4.2 • Available now</div>
+                    </div>
+
+                    <div class="station-card">
+                        <div class="station-header">
+                            <div class="station-brand hpcl">HP</div>
+                            <div class="station-distance">1.2 km • 5 min</div>
+                        </div>
+                        <div class="station-name">HPCL - Highway Station</div>
+                        <div class="station-prices">
+                            <div class="fuel-price">
+                                <span class="fuel-type">Petrol</span>
+                                <span class="price">₹101.89</span>
+                            </div>
+                            <div class="fuel-price">
+                                <span class="fuel-type">Diesel</span>
+                                <span class="price">₹89.23</span>
+                            </div>
+                        </div>
+                        <div class="station-offer triple-points">3x Stark Points today</div>
+                        <div class="station-rating">⭐ 4.5 • Available now</div>
+                    </div>
+
+                    <div class="station-card">
+                        <div class="station-header">
+                            <div class="station-brand indianoil">IO</div>
+                            <div class="station-distance">1.5 km • 6 min</div>
+                        </div>
+                        <div class="station-name">IndianOil - Express Point</div>
+                        <div class="station-prices">
+                            <div class="fuel-price">
+                                <span class="fuel-type">Petrol</span>
+                                <span class="price">₹102.12</span>
+                            </div>
+                            <div class="fuel-price">
+                                <span class="fuel-type">Diesel</span>
+                                <span class="price">₹89.45</span>
+                            </div>
+                        </div>
+                        <div class="station-offer">Free car wash above ₹1000</div>
+                        <div class="station-rating">⭐ 4.0 • Available now</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Screen -->
+            <div class="screen" id="pay-screen">
+                <div class="payment-header">
+                    <h2>Make Payment</h2>
+                    <div class="selected-station">
+                        <div class="station-brand bpcl">BP</div>
+                        <div>BPCL - Central Plaza</div>
+                    </div>
+                </div>
+
+                <div class="fuel-selection">
+                    <h3>Select Fuel Type</h3>
+                    <div class="fuel-options">
+                        <button class="fuel-option active" data-fuel="petrol">
+                            <span class="fuel-icon">⛽</span>
+                            <div>
+                                <div class="fuel-name">Petrol</div>
+                                <div class="fuel-price-per-liter">₹102.45/L</div>
+                            </div>
+                        </button>
+                        <button class="fuel-option" data-fuel="diesel">
+                            <span class="fuel-icon">🚛</span>
+                            <div>
+                                <div class="fuel-name">Diesel</div>
+                                <div class="fuel-price-per-liter">₹89.67/L</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="amount-selection">
+                    <h3>Enter Amount</h3>
+                    <div class="amount-input-container">
+                        <span class="currency">₹</span>
+                        <input type="number" class="amount-input" placeholder="0" id="payment-amount">
+                        <div class="estimated-liters">~<span id="estimated-liters">0</span>L</div>
+                    </div>
+                    
+                    <div class="quick-amounts">
+                        <button class="amount-btn" data-amount="500">₹500</button>
+                        <button class="amount-btn" data-amount="1000">₹1000</button>
+                        <button class="amount-btn" data-amount="1500">₹1500</button>
+                        <button class="amount-btn" data-amount="2000">₹2000</button>
+                    </div>
+                </div>
+
+                <div class="payment-summary">
+                    <div class="summary-row">
+                        <span>Amount</span>
+                        <span id="summary-amount">₹0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Stark Points to earn</span>
+                        <span id="summary-points">0 pts</span>
+                    </div>
+                    <div class="summary-row special">
+                        <span>Cashback (5% UPI)</span>
+                        <span id="summary-cashback">₹0</span>
+                    </div>
+                </div>
+
+                <div class="qr-section hidden" id="qr-section">
+                    <h3>Scan QR Code</h3>
+                    <div class="qr-container">
+                        <div class="qr-code">
+                            <img src="https://pplx-res.cloudinary.com/image/upload/v1755006815/pplx_project_search_images/e5bf27d9c26cd519503d1076796af657b83b171c.png" alt="QR Code">
+                        </div>
+                        <div class="qr-instructions">
+                            Show this QR code to the pump attendant
+                        </div>
+                        <div class="payment-timer">
+                            <span>Payment expires in: </span>
+                            <span id="timer">05:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn--primary btn--full-width" id="generate-qr-btn">
+                    Generate Payment QR
+                </button>
+            </div>
+
+            <!-- Rewards Screen -->
+            <div class="screen" id="rewards-screen">
+                <div class="rewards-header">
+                    <div class="points-balance">
+                        <div class="balance-amount">1,450</div>
+                        <div class="balance-label">Available Stark Points</div>
+                    </div>
+                    <div class="tier-badge">Road Warrior</div>
+                </div>
+
+                <div class="section">
+                    <h2>Redeem Rewards</h2>
+                    <div class="rewards-grid">
+                        <div class="reward-card affordable">
+                            <div class="reward-icon">⛽</div>
+                            <div class="reward-name">₹50 Fuel Discount</div>
+                            <div class="reward-cost">500 points</div>
+                            <button class="btn btn--primary btn--sm">Redeem</button>
+                        </div>
+                        <div class="reward-card affordable">
+                            <div class="reward-icon">🚿</div>
+                            <div class="reward-name">Free Car Wash</div>
+                            <div class="reward-cost">300 points</div>
+                            <button class="btn btn--primary btn--sm">Redeem</button>
+                        </div>
+                        <div class="reward-card affordable">
+                            <div class="reward-icon">🎁</div>
+                            <div class="reward-name">₹100 Amazon Voucher</div>
+                            <div class="reward-cost">800 points</div>
+                            <button class="btn btn--primary btn--sm">Redeem</button>
+                        </div>
+                        <div class="reward-card">
+                            <div class="reward-icon">✨</div>
+                            <div class="reward-name">Premium Car Polish</div>
+                            <div class="reward-cost">1,200 points</div>
+                            <button class="btn btn--outline btn--sm">Need 250 more</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Your Achievements</h2>
+                    <div class="badges-grid">
+                        <div class="badge-card earned">
+                            <div class="badge-icon">🏆</div>
+                            <div class="badge-name">Road Warrior</div>
+                            <div class="badge-description">Complete 50 transactions</div>
+                            <div class="badge-date">Earned Jul 15, 2025</div>
+                        </div>
+                        <div class="badge-card earned">
+                            <div class="badge-icon">⚡</div>
+                            <div class="badge-name">Efficiency Expert</div>
+                            <div class="badge-description">Maintain >15 km/l for 3 months</div>
+                            <div class="badge-date">Earned Aug 1, 2025</div>
+                        </div>
+                        <div class="badge-card">
+                            <div class="badge-icon">🌟</div>
+                            <div class="badge-name">Brand Explorer</div>
+                            <div class="badge-description">Use 5 different fuel brands</div>
+                            <div class="badge-progress">3 of 5 completed</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Screen -->
+            <div class="screen" id="profile-screen">
+                <div class="profile-header">
+                    <div class="profile-avatar">RS</div>
+                    <div class="profile-info">
+                        <h2>Robert Scott</h2>
+                        <p>Road Warrior • Member since Jan 2025</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>Monthly Summary</h3>
+                    <div class="expense-chart">
+                        <canvas id="expenseChart" style="position: relative; height: 250px;"></canvas>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>Transaction History</h3>
+                    <div class="transaction-list">
+                        <div class="transaction-item">
+                            <div class="transaction-icon bpcl">BP</div>
+                            <div class="transaction-details">
+                                <div class="transaction-title">BPCL - Central Plaza</div>
+                                <div class="transaction-meta">Aug 24, 2025 • 14.6L Petrol</div>
+                            </div>
+                            <div class="transaction-amount">₹1,500</div>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-icon hpcl">HP</div>
+                            <div class="transaction-details">
+                                <div class="transaction-title">HPCL - Highway Station</div>
+                                <div class="transaction-meta">Aug 19, 2025 • 21.8L Petrol</div>
+                            </div>
+                            <div class="transaction-amount">₹2,200</div>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-icon indianoil">IO</div>
+                            <div class="transaction-details">
+                                <div class="transaction-title">IndianOil - Express Point</div>
+                                <div class="transaction-meta">Aug 15, 2025 • 17.9L Petrol</div>
+                            </div>
+                            <div class="transaction-amount">₹1,800</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>Quick Actions</h3>
+                    <div class="quick-actions">
+                        <button class="action-btn">
+                            <span>📊</span>
+                            Export Data
+                        </button>
+                        <button class="action-btn">
+                            <span>⚙️</span>
+                            Settings
+                        </button>
+                        <button class="action-btn">
+                            <span>❓</span>
+                            Help & Support
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-item active" data-screen="home-screen">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Home</span>
+            </button>
+            <button class="nav-item" data-screen="locate-screen">
+                <span class="nav-icon">📍</span>
+                <span class="nav-label">Locate</span>
+            </button>
+            <button class="nav-item" data-screen="pay-screen">
+                <span class="nav-icon">💳</span>
+                <span class="nav-label">Pay</span>
+            </button>
+            <button class="nav-item" data-screen="rewards-screen">
+                <span class="nav-icon">🏆</span>
+                <span class="nav-label">Rewards</span>
+            </button>
+            <button class="nav-item" data-screen="profile-screen">
+                <span class="nav-icon">👤</span>
+                <span class="nav-label">Profile</span>
+            </button>
+        </nav>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
